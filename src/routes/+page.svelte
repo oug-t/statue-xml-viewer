@@ -15,41 +15,43 @@
 <div
 	class="min-h-screen bg-linear-to-b from-(--color-hero-from) via-(--color-hero-via) to-(--color-hero-to)"
 >
-	<Hero />
+	<div class="w-full max-w-3xl mx-auto px-4 py-16 text-center flex flex-col items-center">
+		
+		<div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-500/10 border border-blue-400/20 backdrop-blur-sm">
+			<span class="text-sm font-mono font-semibold text-blue-200 tracking-tight">
+				⚡ Implemented in 1 hour
+			</span>
+		</div>
 
-    <div class="flex justify-center py-8">
-        <a href="/demo" class="demo-btn">
-            View XML Component Demo
-        </a>
-    </div>
+		<h2 class="text-5xl font-black text-white tracking-tight drop-shadow-xl mb-4">
+			XML Viewer Demo
+		</h2>
+		
+		<p class="text-xl text-gray-300 max-w-xl mx-auto leading-relaxed mb-10">
+			Native DOM rendering.
+			<br />
+			<span class="opacity-75 text-base">Interact with raw XML, SVG, and RSS feeds.</span>
+		</p>
 
-	<section class="typewriter-showcase">
-		<BuiltBy />
-	</section>
+		<div class="flex flex-col items-center gap-4">
+			<a href="/demo" class="demo-btn group">
+				<span class="text-xl group-hover:scale-110 transition-transform duration-200">▶</span>
+				<span>Try the Live Demo</span>
+			</a>
+		</div>
 
-	<div class="stats-wrapper">
-		<Stats />
-	</div>
-
-	<div class="container mx-auto px-4 py-10">
-		<Categories directories={data.directories} />
-
-		<LatestContent rootContent={data.rootContent} />
 	</div>
 </div>
 
 <style>
-	/* Add smooth scroll behavior */
 	:global(html) {
 		scroll-behavior: smooth;
 	}
 
-	/* Reduce padding of Stats component on this page to sit closer to BuiltBy */
 	.stats-wrapper :global(.container) {
 		padding-top: 1rem !important;
 	}
 
-	/* Typewriter Showcase Section */
 	.typewriter-showcase {
 		max-width: 1200px;
 		margin: 0 auto;
@@ -59,20 +61,24 @@
 		z-index: 10;
 	}
 
-    .demo-btn {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background-color: var(--color-hero-from); /* Uses your existing theme vars */
-        color: white;
-        text-decoration: none;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        transition: transform 0.2s, filter 0.2s;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
+	.demo-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.75rem 2.5rem;
+		background-color: white;
+		color: var(--color-hero-from);
+		text-decoration: none;
+		border-radius: 9999px; /* Pill shape */
+		font-weight: 800;
+		font-size: 1.1rem;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+		transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	}
 
-    .demo-btn:hover {
-        transform: translateY(-2px);
-        filter: brightness(1.1);
-    }
+	.demo-btn:hover {
+		transform: translateY(-2px) scale(1.02);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+		background-color: #f8fafc;
+	}
 </style>
